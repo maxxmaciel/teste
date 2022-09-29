@@ -741,8 +741,8 @@ var info_cat = {
         },
         img_tags: {
           principal: {
-            url_imagem:
-              "https://midias.vtsign.com.br/catalago/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
+            url_imagem: "imagens/Artesanais/bobs-artesanal.png"
+            ,
             caminho_imagem:
               "\\\\\\\\192.168.254.149\\\\D$/uploads/midia/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
           },
@@ -768,7 +768,7 @@ var info_cat = {
         img_tags: {
           principal: {
             url_imagem:
-              "https://midias.vtsign.com.br/catalago/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
+              "imagens/Artesanais/bobs-artesanal.png",
             caminho_imagem:
               "\\\\\\\\192.168.254.149\\\\D$/uploads/midia/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
           },
@@ -793,13 +793,13 @@ var info_cat = {
         img_tags: {
           principal: {
             url_imagem:
-              "https://midias.vtsign.com.br/catalago/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
+              "imagens/Artesanais/bobs-artesanal.png",
             caminho_imagem_principal:
               "\\\\\\\\192.168.254.149\\\\D$/uploads/midia/19/Categorias/1/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
           },
           secundaria: {
             url_imagem:
-              "https://midias.vtsign.com.br/catalago/19/Categorias/2/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
+              "imagens/Artesanais/bobs-artesanal.png",
             caminho_imagem:
               "\\\\\\\\192.168.254.149\\\\D$/uploads/midia/19/Categorias/2/6512BD43D9CAA6E02C990B0A82652DCA.jpg",
           },
@@ -818,7 +818,7 @@ var info_cat = {
         img_tags: {
           principal: {
             url_imagem:
-              "https://midias.vtsign.com.br/catalago/19/Categorias/1/C9F0F895FB98AB9159F51FD0297E236D.jpg",
+              "imagens/Artesanais/bobs-artesanal.png",
             caminho_imagem:
               "\\\\\\\\192.168.254.149\\\\D$/uploads/midia/19/Categorias/1/C9F0F895FB98AB9159F51FD0297E236D.jpg",
           },
