@@ -1,0 +1,272 @@
+/* CSS RESET  */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: relative;
+}
+
+/* FONTES  */
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(./fontes/RobotoSlab-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Barlow Condensed SemiBold";
+  src: url(./fontes/BarlowCondensed-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Barlow Condensed Medium";
+  src: url(./fontes/BarlowCondensed-Medium.ttf);
+}
+@font-face {
+  font-family: "Barlow Condensed Regular";
+  src: url(./fontes/BarlowCondensed-Regular.ttf);
+}
+
+.font-Barlow-Condensed-Medium {
+  font-family: "Barlow Condensed Medium";
+}
+.font-Barlow-Condensed-SemiBold {
+  font-family: "Barlow Condensed SemiBold";
+}
+.font-Roboto-Slab {
+  font-family: "Roboto Slab";
+}
+/* VARIAVEIS PARA COR   */
+:root {
+  --purple: #85456b;
+  --red: #c52e2e;
+  --black: #050707;
+}
+
+/*  ESTRUTURA        */
+p {
+  margin-bottom: 0rem;
+}
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./imagens/background.png);
+  background-size: 100%;
+  font-style: normal;
+}
+
+.caixa-produto {
+  width: 50vw;
+  border: 2px solid var(--purple);
+  box-shadow: 0px 4px 8px 7px rgba(0, 0, 0, 0.25);
+  background-color: var(--bs-white);
+}
+
+#overlay {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.description-container {
+  display: none;
+  animation: animationDescription;
+  animation-duration: 1s;
+}
+
+.caixa-produto-invisivel {
+  height: 30.3125vw;
+}
+
+.caixa-produto .description {
+  color: var(--purple);
+  font-size: 2.5vw;
+  padding: 0.862vw 2.437vw 1.436vw 0;
+  width: 81%;
+}
+
+.caixa-produto .off-description {
+  width: 19%;
+  padding-top: 2.6vw;
+}
+
+.caixa-produto .off-description .button-off-description {
+  width: 2.1vw;
+  height: 0.55vw;
+  background: var(--purple);
+}
+
+.produtosContainer {
+  width: 87%;
+  margin: 0 auto;
+}
+
+.nome-produto {
+  font-weight: 500;
+  font-size: 3.75vw;
+  line-height: 100%;
+  color: var(--red);
+  height: 14.8125vw;
+}
+
+.row-container {
+  margin-top: 12.35vw;
+}
+.caixa-invisivel {
+  height: 30.3125vw;
+}
+
+.categoria {
+  font-weight: 700;
+  font-size: 9.375vw;
+  color: var(--red);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  height: 41vw;
+}
+
+.caixa-valor {
+  color: var(--bs-white);
+  height: 15.937vw;
+  background: var(--black);
+}
+
+.caixa-valor .textP-1 {
+  font-size: 3.125vw;
+  line-height: 117%;
+}
+
+.caixa-valor .textP-2 {
+  font-size: 3.125vw;
+  padding-top: 0.9375vw;
+}
+.caixa-valor .textP-3,
+.caixa-valor .textP-2 {
+  float: left;
+}
+.caixa-valor .textP-3 {
+  font-size: 6.25vw;
+  font-weight: 500;
+  padding: 0 0 1.293vw 5vw;
+}
+
+.caixa-valor .textP-4 {
+  font-size: 3.125vw;
+  padding: 0.2vw 0 0 0.63vw;
+  font-weight: 500;
+}
+
+.animate-produto:hover {
+  animation: notification 5s;
+}
+
+/* ANIMAÇÕES      */
+
+@keyframes notification {
+  5% {
+    transform: rotate(10deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animationDescription {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.OverlayNavBarOn {
+  visibility: visible;
+  opacity: 1;
+  animation-name: OpacityOn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes OpacityOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.OverlayNavBarOff {
+  opacity: 0;
+  animation-name: OpacityOff;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes OpacityOff {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* toolbar   */
+.container-categorias-toolbar {
+  height: 25vw;
+  background: var(--bs-white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  position: fixed;
+  z-index: 3;
+}
+.container-categorias-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.ball-area {
+  /*background: rgba(197, 46, 46, 0.8);*/
+  border-radius: 50%;
+  width: 14.204vw;
+  height: 14.204vw;
+  margin-top: 1.704vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball-area img {
+  width: 80%;
+}
+.container-area-categoria {
+  width: 21.809vw;
+  height: 25.284vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+.container-categorias-toolbar .container-area-categoria p {
+  font-family: "Barlow Condensed Regular";
+  color: rgba(113, 113, 113, 0.8);
+  font-size: 2.84vw;
+  text-align: center;
+  height: 9.09vw;
+  padding-top: 1vw;
+  width: 14.204vw;
+  top: 5%;
+}
