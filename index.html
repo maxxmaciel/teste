@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio Bob's</title>
+  <link href="bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <div class="container-categorias-toolbar w-100" data-vtt-category-toolbar-container="" style="top: -16vw"></div>
+    <div class="align-items-center d-flex flex-column produtosContainer" data-vtt-produtos-container=""></div>
+    <div id="overlay" class="position-fixed top-0 bottom-0 start-0 end-0" style="display: none"></div>
+  </main>
+  <script src="lib/jquery/3.6.1/jquery-3.6.1.min.js"></script>
+  <script src="./js/const.js"></script>
+  <script src="./js/std/std.js"></script>
+
+  <script src="./js/info_cat.js"></script>
+  <script src="./js/vt/proj/134/html_node_builder.js"></script>
+  <script src="./js/loader.js"></script>
+
+  <script src="test/loader.test.js"></script>
+  <script type="text/javascript">
+    var g_nodes = {
+      caixaproduto: {
+        selector: ".caixa-produto",
+        teste: ".teste",
+        events: {
+          click: (e) => {
+            var overlay = g_nodes.overlay.nodes;
+            var cp = $(e.currentTarget);
+            var openDescription = cp.find(".description-container");
+            var DivProduto = cp.find(".caixa-produto");
+
+            openDescription.prevObject.css({
+              zIndex: "2",
+              transition: "0s",
+            });
+
+            overlay.show();
+            overlay.addClass("OverlayNavBarOn");
+            overlay.removeClass("OverlayNavBarOff");
+            openDescription.css({ display: "flex" });
+          },
+        },
+      },
+      overlay: {
+        selector: "#overlay",
+        events: {
+          click: (e) => {
+            var o = $(e.currentTarget);
+
+            o.addClass("OverlayNavBarOff");
+            o.removeClass("OverlayNavBarOn");
+
+            g_nodes.caixaproduto.nodes.css({
+              zIndex: "0",
+              transition: "2s",
+            });
+
+            g_nodes.openDescription.nodes.css({ display: "none" });
+          },
+        },
+      },
+      openDescription: { selector: ".description-container" },
+    };
+
+    $(document).ready(() => {
+      load_pg("#root");
+      load_nodes(g_nodes);
+      testeLoader();
+    });
+  </script>
+</body>
+
+</html>
